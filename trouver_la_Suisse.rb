@@ -1,3 +1,8 @@
+# if   array.sort == array.sort
+#   puts "erreur."
+#   exit
+# end
+# pas de gestion de l'erreur
 
 array = [ ARGV[0], ARGV[1], ARGV[2] ]
 
