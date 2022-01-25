@@ -1,36 +1,35 @@
-saisie = "#{ARGV[0]}".tr(':',"")
+heure_initiale = ARGV[0]  # 23:40
 
-hour =  ARGV[0].to_i
-minutes = ARGV[1].to_i
+# soustraire 12
+heure = heure_initiale.to_i # 23:40 transformé en integer
+minutes = heure_initiale.tr("#{heure}","#{minutes}")
 
-case hour
-when 12
-  then
-  hour = 12
-  time = "PM"
-when 00..23
-  then hour -=12
-  time = "PM"
-when 01..12
-  then
-  time = "AM"
-else
-  puts "test"
-  exit
-end
+heure_américaine = heure -=12
+puts "#{heure_américaine}#{minutes}PM "
 
-puts "#{hour}:#{minutes} #{time}"
+# if heure_américaine -= 12
+#   puts "#{heure_américaine}#{minutes}PM "
+# end
 
-# non terminé 
-# puts "#{hour} #{minutes}"
 
-# declaring DateTime value
-# date_c = DateTime.new(2019, 8, 10, 4, 10, 9, Rational(5, 12))
-# puts "DateTime strftime form : #{date_c.strftime("at %I:%M%p")}\n\n"
+# case heure
+# when 12
+#   then
+#   heure_américaine = 12
+#   minutes = "PM"
+# when 00..23
+#   then heure_américaine -=12
+#   minutes = "PM"
+# when 01..12
+#   then
+#   heure_américaine = "AM"
+# else
+#   puts "erreur"
+#   exit
+# end
 
-# case =
-# when
-# # puts "#{ARGV[0].to_i}" ":" "#{ARGV[1].to_i}"
+# puts "#{heure}:#{minutes}"
+
 
 # if  23 return 11
 # 00 12
