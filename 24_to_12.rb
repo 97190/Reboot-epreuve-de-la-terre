@@ -1,66 +1,44 @@
 heure_initiale = ARGV[0]  # 23:40
 
 # soustraire 12
-heure = heure_initiale.to_i # 23:40 transformé en integer
-minutes = heure_initiale.tr("#{heure}","#{minutes}")
+heure = heure_initiale.to_i # 23 integer
+minutes = heure_initiale.tr("#{heure}","#{minutes}") #: '40'
 
-heure_américaine = heure -=12
-puts "#{heure_américaine}#{minutes}PM "
+# heure_américaine = heure -=12
+# puts "#{heure_américaine}#{minutes}PM "
 
-# if heure_américaine -= 12
-#   puts "#{heure_américaine}#{minutes}PM "
-# end
+if "#{heure_initiale}" = (0..11)
+  puts puts "#{heure_américaine}#{minutes}AM "
+elsif "#{heure_initiale}" = (12..23)
+  puts puts "#{heure_américaine}#{minutes}PM "
+else
+  puts"erreur"
+end
 
+# Groupe AM
+# 00:00 = 12:00 AM (minuit)
+# 01:00 = 1:00 AM (une heure du matin).
+# 02:00 = 2:00 AM.
+# 03:00 = 3:00 AM.
+# 04:00 = 4:00 AM.
+# 05:00 = 5:00 AM.
+# 06:00 = 6:00 AM.
+# 07:00 = 7:00 AM.
+# 08:00 = 8:00 AM.
+# 09:00 = 9:00 AM.
+# 10:00 = 10:00 AM.
+# 11:00 = 11:00 AM.
 
-# case heure
-# when 12
-#   then
-#   heure_américaine = 12
-#   minutes = "PM"
-# when 00..23
-#   then heure_américaine -=12
-#   minutes = "PM"
-# when 01..12
-#   then
-#   heure_américaine = "AM"
-# else
-#   puts "erreur"
-#   exit
-# end
-
-# puts "#{heure}:#{minutes}"
-
-
-# if  23 return 11
-# 00 12
-# 01 13
-# 02 14
-# 03 15
-# 04 16
-# 05 17
-# 06 18
-# 07 19
-# 08 20
-# 09 21
-# 10 22
-# 11 23
-# 12 00
-# 13 01
-# 14 02
-# 15 03
-# 16 04
-# 17 05
-# 18 06
-# 19 07
-# 20 08
-# 21 09
-# 22 10
-# 23 11
-
-# for c in "#{hour}00..23"
-#   print "#{c}"
-# end
-#  puts 24.hours
-# %k# %H rentré dans un tableau un range de (00..23) horloge de 24h
-#  %JE %M Heure du jour, horloge de 12 heures (01..12) horloge de 12h00
-#puts 12,24.class
+# Groupe PM
+# 12:00 = 12:00 PM (midi).
+# 13:00 = 1:00 PM.(une heure de l’après-midi)
+# 14:00 = 2:00 PM.
+# 15:00 = 3:00 PM.
+# 16:00 = 4:00 PM.
+# 17:00 = 5:00 PM.
+# 18:00 = 6:00 PM.
+# 19:00 = 7:00 PM.
+# 20:00 = 8:00 PM.
+# 21:00 = 9:00 PM.
+# 22:00 = 10:00 PM.
+# 23:00 = 11:00 PM.
