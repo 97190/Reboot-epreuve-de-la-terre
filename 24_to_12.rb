@@ -1,18 +1,18 @@
 heure_initiale = ARGV[0]  # 23:40
 
-# soustraire 12
-heure = heure_initiale.to_i # 23 integer
-minutes = heure_initiale.tr("#{heure}","#{minutes}") #: '40'
+tab = ARGV[0].split(":")  # ":40"
 
-# heure_américaine = heure -=12
-# puts "#{heure_américaine}#{minutes}PM "
+heure = tab[0]
+minutes = tab[1]
 
-if "#{heure_initiale}" = (0..11)
-  puts puts "#{heure_américaine}#{minutes}AM "
-elsif "#{heure_initiale}" = (12..23)
-  puts puts "#{heure_américaine}#{minutes}PM "
-else
-  puts"erreur"
+if (heure == "00") # Si mon heure donnée en argument et 00 je passe à l'intruction suivante.
+  puts "#{heure.to_i + 12}: #{minutes}AM" #
+elsif (heure == "12")
+    puts "#{heure}:#{minutes}PM"
+elsif (heure.to_i >= 1 && heure.to_i <= 11 )
+  puts "#{heure}:#{minutes}AM"
+elsif (heure.to_i >= 13 && heure.to_i <= 23 )
+  puts "#{heure.to_i - 12}:#{minutes}PM"
 end
 
 # Groupe AM
