@@ -1,15 +1,21 @@
+array = [ARGV[0], ARGV[1], ARGV[2]]
+
+sorted_array = array.sort
+
 if ARGV[0] == ARGV[1] && ARGV[0] == ARGV[2]
   puts "erreur."
 elsif ARGV[1] == ARGV[2] && ARGV[1] == ARGV[0]
   puts "erreur."
 elsif ARGV[2] == ARGV[1] && ARGV[2] == ARGV[0]
+else
+  puts sorted_array[1]
   exit
 end
 
-array = [ ARGV[0], ARGV[1], ARGV[2] ]
+# array = [ARGV[0], ARGV[1], ARGV[2]]
 
-sorted_array = array.sort
-puts sorted_array[1]
+# sorted_array = array.sort
+# puts sorted_array[1]
 
 # if sorted_array.count % 2 == 0
 #   first_half = (sorted_array[0...(count/2)])
