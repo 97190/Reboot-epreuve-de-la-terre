@@ -11,4 +11,3 @@ else
   puts sorted_array[1]
   exit
 end
-
