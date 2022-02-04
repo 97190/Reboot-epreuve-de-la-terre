@@ -1,13 +1,13 @@
-array = [ARGV[0], ARGV[1], ARGV[2]]
+array = [ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i]
 
 sorted_array = array.sort
 
 if ARGV[0] == ARGV[1] && ARGV[0] == ARGV[2]
   puts "erreur."
-elsif ARGV[1] == ARGV[2] && ARGV[1] == ARGV[0]
-  puts "erreur."
-elsif ARGV[2] == ARGV[1] && ARGV[2] == ARGV[0]
 else
   puts sorted_array[1]
-  exit
 end
+
+# Méthodologie Harry
+#  array = ARGV
+#  Ou ARGV dès le départ
