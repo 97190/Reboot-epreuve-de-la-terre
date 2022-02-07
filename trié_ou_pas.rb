@@ -6,31 +6,18 @@
 # Triée !
 # $> ruby exo.rb “Salut”
 # erreur.
-tableau = []
-for index in 0..ARGV.length-1
-    if /\D/.match("#{ARGV[index]}")
-        puts "Erreur."
-        abort
-    end
-    tableau << ARGV[index]
+tab = []
+
+ARGV.each do |element|
+  if (element.to_i.to_s != element)
+    puts "Erreur."
+    exit
+  end
+  tab << element.to_i
 end
 
-
-# parcourir le tableau
-for index in 0...tableau.length-1
-    if ( tableau[index] < tableau[index+1] )
-        then
-            condition = true
-    else condition = false
-    end
-end
-
-#puts condition.to_s
-
-# Afficher Sortie
-
-if condition == true
-    then puts "Triée !"
+if tab == tab.sort
+  puts "Tried"
 else
-    puts "Pas triée !"
+  puts "Pas tried"
 end
